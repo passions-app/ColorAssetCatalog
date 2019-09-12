@@ -32,10 +32,8 @@ public class ColorAssetManager {
     }
 
     func asset(named name: String) -> ColorAsset? {
-        guard let dir = (bundle ?? Bundle.main).resourceURL?.appendingPathComponent("\(catalogName).xcassets"),
-            let files = try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil, options: []),
-            let colorset = files.first(where: { $0.lastPathComponent == "\(name).colorset" }),
-            let data = try? Data(contentsOf: colorset.appendingPathComponent("Contents.json")),
+        guard let colorset = (bundle ?? Bundle.main).resourceURL?.appendingPathComponent("\(catalogName).xcassets/\(name).colorset/Contents.json"),
+            let data = try? Data(contentsOf: colorset),
             let catalog = try? JSONDecoder().decode(ColorAssetCatalog.self, from: data)
             else {
                 return nil
