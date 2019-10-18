@@ -40,7 +40,7 @@ class DemoViewController: UIViewController {
 
     func nextColorName() -> String? {
         guard let currentColorName = currentColorName else { return colorNames.first }
-        let currentIndex = colorNames.index(of: currentColorName) ?? 0
+        let currentIndex = colorNames.firstIndex(of: currentColorName) ?? 0
         let nextIndex = (currentIndex >= colorNames.count - 1) ? 0 : currentIndex + 1
         return colorNames[nextIndex]
     }
