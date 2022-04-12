@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ColorAssetCatalog'
-  s.version          = '1.1'
+  s.version          = '1.2'
   s.swift_version    = '5.0'
-  s.summary          = 'Adds iOS 9+ compatibility for named colors in asset catalogs.'
+  s.summary          = 'Adds iOS 14+ compatibility for named colors in asset catalogs.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/samrayner/ColorAssetCatalog.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/samrayner'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '14.0'
 
   s.source_files = 'ColorAssetCatalog/Classes/**/*'
 
